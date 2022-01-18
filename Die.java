@@ -20,27 +20,72 @@ public class Die{
         System.out.println("***Press enter everytime you want to roll the dice***");
         Boolean game_status = true;
         while(answr.toUpperCase().equals("Y") && game_status){
-            playgame();
+            game_status = playgame();
         }
     }
-    public static void playgame(){
+    public static Boolean playgame(){
+        Scanner input2 = new Scanner(System.in);
         System.out.println();
         System.out.println("<Press Enter to roll>");
-        String enter = input.next();
+        String enter = input2.nextLine();
         double die_roll = (Math.random()* 6) + 1;
         int die_roll2 = (int)die_roll;
-        System.out.println("You rolled a" + die_roll2);
+        System.out.println("You rolled a " + die_roll2);
         if(die_roll2 == 2 | die_roll == 3 | die_roll2 == 12){
             System.out.println("AWWW, sorry but you lost");
             System.out.println("Would you like to play again(Y/N)?");
-            String answr3 = input.next();
+            String answr3 = input2.next();
             if(answr3.toUpperCase().equals("Y")){
-                game_status = true;
+                return true;
         }
             else{
-                
-                game_status = false;
+                return false;
             }
-    }   
+    }
+        else if(die_roll2 == 7 | die_roll == 11){
+            System.out.println("Congrats you won!");
+            System.out.println("Would you like to play again(Y/N)?");
+            String answr3 = input2.next();
+            if(answr3.toUpperCase().equals("Y")){
+                return true;
+        }
+            else{
+                return false;
+            }
+        }
+        else{
+            System.out.println("So your point is a " + die_roll2);
+            System.out.println("<Press Enter to roll>");
+            String enter2 = input2.nextLine();
+            double die_roll3 = (Math.random()* 6) + 1;
+            int die_roll4 = (int)die_roll3;
+            System.out.println("You rolled a " + die_roll4);
+            while (die_roll4 != 7 && die_roll4 != die_roll2) {
+                System.out.println("Roll again!");
+                System.out.println("<Press Enter to roll>");
+                enter2 = input2.nextLine();
+                die_roll3 = (Math.random()* 6) + 1;
+                die_roll4 = (int)die_roll3;
+                System.out.println("You rolled a " + die_roll4);
+            }
+            if (die_roll4 == 7) {
+                System.out.println("Aww, so close but you lose");
+                System.out.println("Would you like to play again(Y/N)?");
+                String answr4 = input2.next();
+                if(answr4.toUpperCase().equals("Y")){
+                    return true;
+            }
+        }
+            if (die_roll4 == die_roll2){
+                System.out.println("YOU WIN!");
+                System.out.println("Would you like to play again(Y/N)?");
+                String answr5 = input2.next();
+                if(answr5.toUpperCase().equals("Y")){
+                    return true;
+            }
+        }   
+        return false;
+        
+}
 }
 }
