@@ -17,14 +17,16 @@ public class Die{
                 System.out.println("'point' from that first roll again, in which case they win; or they roll a 7, in which case they lose.");
             }
         }
+        System.out.println("***Press enter everytime you want to roll the dice***");
         while(answr.toUpperCase().equals("Y")){
             playgame();
         }
     }
     public static void playgame(){
         System.out.println();
+        String Enter = input.next();
         double die_roll = (Math.random()* 6) + 1;
-        int die_roll2 = die_roll;
+        int die_roll2 = (int)die_roll;
         
     }   
 }
