@@ -28,7 +28,7 @@ public class Die{
         System.out.println();
         System.out.println("<Press Enter to roll>");
         String enter = input2.nextLine();
-        double die_roll = (Math.random()* 6) + 1;
+        double die_roll = (Math.random()* 12) + 1;
         int die_roll2 = (int)die_roll;
         System.out.println("You rolled a " + die_roll2);
         if(die_roll2 == 2 | die_roll == 3 | die_roll2 == 12){
@@ -57,14 +57,14 @@ public class Die{
             System.out.println("So your point is a " + die_roll2);
             System.out.println("<Press Enter to roll>");
             String enter2 = input2.nextLine();
-            double die_roll3 = (Math.random()* 6) + 1;
+            double die_roll3 = (Math.random()* 12) + 1;
             int die_roll4 = (int)die_roll3;
             System.out.println("You rolled a " + die_roll4);
             while (die_roll4 != 7 && die_roll4 != die_roll2) {
                 System.out.println("Roll again!");
                 System.out.println("<Press Enter to roll>");
                 enter2 = input2.nextLine();
-                die_roll3 = (Math.random()* 6) + 1;
+                die_roll3 = (Math.random()* 12) + 1;
                 die_roll4 = (int)die_roll3;
                 System.out.println("You rolled a " + die_roll4);
             }
