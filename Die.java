@@ -18,15 +18,29 @@ public class Die{
             }
         }
         System.out.println("***Press enter everytime you want to roll the dice***");
-        while(answr.toUpperCase().equals("Y")){
+        Boolean game_status = true;
+        while(answr.toUpperCase().equals("Y") && game_status){
             playgame();
         }
     }
     public static void playgame(){
         System.out.println();
-        String Enter = input.next();
+        System.out.println("<Press Enter to roll>");
+        String enter = input.next();
         double die_roll = (Math.random()* 6) + 1;
         int die_roll2 = (int)die_roll;
-        
+        System.out.println("You rolled a" + die_roll2);
+        if(die_roll2 == 2 | die_roll == 3 | die_roll2 == 12){
+            System.out.println("AWWW, sorry but you lost");
+            System.out.println("Would you like to play again(Y/N)?");
+            String answr3 = input.next();
+            if(answr3.toUpperCase().equals("Y")){
+                game_status = true;
+        }
+            else{
+                
+                game_status = false;
+            }
     }   
+}
 }
